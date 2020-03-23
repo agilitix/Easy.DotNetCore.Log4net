@@ -1,0 +1,1 @@
+# Easy.DotNetCore.Log4net
