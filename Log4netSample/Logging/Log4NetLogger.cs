@@ -4,7 +4,7 @@ using log4net.Core;
 using Microsoft.Extensions.Logging;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
-namespace Log4netSample
+namespace Log4netSample.Logging
 {
     public class Log4NetLogger : ILogger
     {

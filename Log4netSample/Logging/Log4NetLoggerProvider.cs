@@ -6,7 +6,7 @@ using log4net.Config;
 using log4net.Repository;
 using Microsoft.Extensions.Logging;
 
-namespace Log4netSample
+namespace Log4netSample.Logging
 {
     public class Log4NetLoggerProvider : ILoggerProvider
     {

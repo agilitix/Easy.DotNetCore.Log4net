@@ -1,5 +1,7 @@
 ﻿using System;
-using log4net.Util;
+using Log4netSample.Config;
+using Log4netSample.Logging;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
@@ -9,8 +11,13 @@ namespace Log4netSample
     {
         static void Main(string[] args)
         {
+            // Read log4net config file name.
+            AppConfiguration appConfig = new AppConfiguration();
+            IConfigurationSection sectionLog4net = appConfig.Configuration.GetSection("log4net");
+            string log4netConfig = sectionLog4net.GetValue<string>("configFile");
+
             // Create the log4net logger factory.
-            ILoggerFactory loggerFactory = LoggerFactory.Create(builder => { builder.AddLog4Net("log4net.config"); });
+            ILoggerFactory loggerFactory = LoggerFactory.Create(builder => { builder.AddLog4Net(log4netConfig); });
 
             // Get a logger from factory.
             ILogger logger = loggerFactory.CreateLogger(nameof(Program));

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Log4netSample
+namespace Log4netSample.Logging
 {
     public static class Log4NetExtensions
     {
