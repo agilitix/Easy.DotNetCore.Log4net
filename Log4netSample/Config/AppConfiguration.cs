@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
 
 namespace Log4netSample.Config
 {
@@ -16,7 +13,7 @@ namespace Log4netSample.Config
         {
             IConfigurationBuilder builder = new ConfigurationBuilder()
                                             .SetBasePath(Directory.GetCurrentDirectory())
-                                            .AddJsonFile("AppSettings.json", optional: true, reloadOnChange: true);
+                                            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             Configuration = builder.Build();
         }
     }
